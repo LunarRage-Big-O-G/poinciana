@@ -153,48 +153,58 @@ h3 {
   color: var(--muted);
 }
 
-/* —— Home hero —— */
+/* —— Home hero (Luxora reference layout) —— */
 .hero {
   position: relative;
   margin: 0 calc(-1 * clamp(1rem, 4vw, 1.75rem));
-  padding: clamp(2.5rem, 8vw, 5rem) clamp(1rem, 4vw, 1.75rem)
-    clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(1.75rem, 5vw, 2.75rem) clamp(1rem, 4vw, 1.75rem)
+    clamp(2.25rem, 6vw, 4rem);
   border-radius: 0 0 20px 20px;
   background:
     linear-gradient(
-      165deg,
-      rgba(28, 25, 23, 0.45) 0%,
-      rgba(28, 25, 23, 0.72) 100%
+      160deg,
+      rgba(28, 25, 23, 0.25) 0%,
+      rgba(28, 25, 23, 0.55) 45%,
+      rgba(15, 23, 42, 0.65) 100%
     ),
     url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80')
-      center 40% / cover no-repeat;
+      center 35% / cover no-repeat;
   color: #fff;
 }
 
-.hero-eyebrow {
-  margin: 0 0 0.35rem;
-  font-size: 0.8125rem;
+.hero-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: clamp(1rem, 4vw, 2rem);
+}
+
+.hero-tagline-corner {
+  margin: 0;
+  max-width: 16.5rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.88;
+  line-height: 1.45;
+  text-align: right;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(3.25rem, 14vw, 7.5rem);
+  margin: 0 0 clamp(0.75rem, 2vw, 1.25rem);
+  font-size: clamp(3.5rem, 15vw, 8rem);
   font-weight: 600;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  letter-spacing: -0.06em;
+  line-height: 0.88;
   color: #fff;
 }
 
-.hero-sub {
-  margin: 0 0 2rem;
-  max-width: 22rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  opacity: 0.92;
+.hero-tagline-main {
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+  max-width: 28rem;
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.96);
 }
 
 .hero-search {
@@ -219,8 +229,19 @@ h3 {
   min-width: 0;
 }
 
-.search-field:last-of-type {
+.hero .search-field:last-of-type {
   border-right: none;
+}
+
+.search-label-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.search-pin {
+  flex-shrink: 0;
+  color: var(--muted);
 }
 
 .search-label {
@@ -246,28 +267,51 @@ h3 {
   outline: none;
 }
 
-.hero-search-cta {
+.hero-search-cta-wrap {
   flex: 0 0 auto;
-  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 0.65rem 0.65rem 0.5rem;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.hero-search-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.5rem;
-  margin: 0.5rem;
+  padding: 0.65rem 1.35rem;
   border-radius: 999px;
   min-height: 2.75rem;
+  white-space: nowrap;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
+  .hero-top {
+    justify-content: flex-start;
+  }
+
+  .hero-tagline-corner {
+    text-align: left;
+    max-width: 100%;
+  }
+
   .hero-search .search-field {
     border-right: none;
     border-bottom: 1px solid var(--border);
     flex: 1 1 100%;
   }
 
+  .hero-search-cta-wrap {
+    flex: 1 1 100%;
+    justify-content: stretch;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 0.75rem;
+  }
+
   .hero-search-cta {
-    width: calc(100% - 1rem);
-    margin-top: 0.25rem;
+    width: 100%;
   }
 }
 
