@@ -5,7 +5,7 @@ export function NotFoundPage() {
     <div className="page-not-found">
       <h1>Not found</h1>
       <p>This property is not in the catalog.</p>
-      <Link to="/" hash="collection" className="btn-primary">
+      <Link to="/properties" className="btn-primary">
         View properties
       </Link>
     </div>
