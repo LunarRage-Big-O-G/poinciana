@@ -38,8 +38,8 @@ export function PropertyPage() {
   return (
     <div className="page-property">
       <div className="property-detail-header">
-        <Link to="/" hash="collection" className="back-link">
-          ← Properties
+        <Link to="/properties" className="back-link">
+          ← All properties
         </Link>
         <p className="property-location property-location-loud">{property.location}</p>
         <h1>{property.name}</h1>
@@ -70,26 +70,66 @@ export function PropertyPage() {
       <section className="extras-section">
         <h2>Add experiences</h2>
         <p className="section-lede tight">
-          Select optional add-ons to include with this stay. Final confirmation
-          connects to your booking system.
+          Optional add-ons from vetted local partners. Open{' '}
+          <strong>Full details</strong> for inclusions, guest notes, and
+          cancellation wording—then add only what you want to this stay.
         </p>
         <ul className="extras-list">
           {experiences.map((e) => {
             const on = selectedIds.has(e.id)
             return (
               <li key={e.id}>
-                <button
-                  type="button"
-                  className={`extra-card${on ? ' extra-card--on' : ''}`}
-                  onClick={() => toggleExperience(e.id)}
-                  aria-pressed={on}
-                >
-                  <span className="extra-card-main">
-                    <span className="extra-card-name">{e.name}</span>
-                    <span className="extra-card-summary">{e.summary}</span>
-                  </span>
-                  <span className="extra-card-price">+${e.priceUsd}</span>
-                </button>
+                <div className={`extra-block${on ? ' extra-block--on' : ''}`}>
+                  <div className="extra-block-top">
+                    <div className="extra-block-intro">
+                      <p className="extra-block-category">{e.category}</p>
+                      <h3 className="extra-block-name">{e.name}</h3>
+                      <p className="extra-block-lead">{e.summary}</p>
+                      <p className="extra-block-duration">{e.duration}</p>
+                    </div>
+                    <div className="extra-block-actions">
+                      <p className="extra-block-price-line">
+                        <span className="extra-block-price">+${e.priceUsd}</span>
+                        <span className="extra-block-basis">{e.priceBasis}</span>
+                      </p>
+                      <button
+                        type="button"
+                        className={`btn-extra-toggle${on ? ' btn-extra-toggle--on' : ''}`}
+                        onClick={() => toggleExperience(e.id)}
+                        aria-pressed={on}
+                      >
+                        {on ? 'Added to stay' : 'Add to stay'}
+                      </button>
+                    </div>
+                  </div>
+                  <details className="extra-block-details">
+                    <summary className="extra-block-details-summary">
+                      Full details
+                    </summary>
+                    <div className="extra-block-details-body">
+                      <section className="extra-detail-section">
+                        <h4 className="extra-detail-heading">What’s included</h4>
+                        <ul className="extra-detail-list">
+                          {e.included.map((line) => (
+                            <li key={line}>{line}</li>
+                          ))}
+                        </ul>
+                      </section>
+                      <section className="extra-detail-section">
+                        <h4 className="extra-detail-heading">Good to know</h4>
+                        <ul className="extra-detail-list extra-detail-list--muted">
+                          {e.goodToKnow.map((line) => (
+                            <li key={line}>{line}</li>
+                          ))}
+                        </ul>
+                      </section>
+                      <section className="extra-detail-section extra-detail-section--note">
+                        <h4 className="extra-detail-heading">Cancellation</h4>
+                        <p className="extra-detail-note">{e.cancellationNote}</p>
+                      </section>
+                    </div>
+                  </details>
+                </div>
               </li>
             )
           })}
@@ -98,6 +138,11 @@ export function PropertyPage() {
 
       <section className="booking-panel">
         <h2>Your booking</h2>
+        <p className="booking-trust">
+          This is an estimated total in USD for planning. Taxes, fees, and
+          operator-specific terms are confirmed at secure checkout before any
+          charge.
+        </p>
         <div className="booking-row">
           <label className="booking-label" htmlFor="nights">
             Nights
