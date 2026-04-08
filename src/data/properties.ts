@@ -7,49 +7,48 @@ export type Property = {
   nightlyRate: number
   bedrooms: number
   baths: number
-  /** Hero / detail image (replace with your CMS or CDN URLs) */
   imageUrl: string
 }
 
 export const PROPERTIES: Property[] = [
   {
-    id: 'loft-aurora',
-    name: 'Aurora Loft',
-    tagline: 'Open plan living with skyline views',
+    id: 'villa-cove',
+    name: 'Cove House',
+    tagline: 'Cliffside pool and sunset views',
     description:
-      'Floor-to-ceiling windows, a full kitchen, and a quiet workspace nook. Walking distance to dining and music venues.',
-    location: 'Austin, TX',
-    nightlyRate: 189,
+      'Three suites, outdoor kitchen, and direct water access. Housekeeping every other day.',
+    location: 'Ocho Rios',
+    nightlyRate: 420,
+    bedrooms: 3,
+    baths: 3,
+    imageUrl:
+      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
+  },
+  {
+    id: 'estate-garden',
+    name: 'Garden Estate',
+    tagline: 'Wide lawns and a quiet guest cottage',
+    description:
+      'Main house plus cottage, ideal for two families. Full kitchen and shaded terraces.',
+    location: 'Montego Bay',
+    nightlyRate: 510,
+    bedrooms: 5,
+    baths: 4,
+    imageUrl:
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+  },
+  {
+    id: 'bungalow-lagoon',
+    name: 'Lagoon Bungalow',
+    tagline: 'Dock and glass walls over the water',
+    description:
+      'One-level layout with kayaks included. Perfect for a longer stay with remote work.',
+    location: 'Negril',
+    nightlyRate: 295,
     bedrooms: 2,
     baths: 2,
     imageUrl:
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80',
-  },
-  {
-    id: 'cabin-ridge',
-    name: 'Ridge Cabin',
-    tagline: 'Quiet wood retreat, floor-to-ceiling glass',
-    description:
-      'Wrapped in cedar with a wide deck and mountain light all day. Ideal for small groups who want nature without roughing it.',
-    location: 'Asheville, NC',
-    nightlyRate: 245,
-    bedrooms: 3,
-    baths: 2,
-    imageUrl:
-      'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80',
-  },
-  {
-    id: 'studio-harbor',
-    name: 'Harbor Studio',
-    tagline: 'Compact waterfront stay',
-    description:
-      'Efficient studio layout with harbor views, in-unit laundry, and fast Wi‑Fi for remote work between sails.',
-    location: 'Portland, ME',
-    nightlyRate: 132,
-    bedrooms: 1,
-    baths: 1,
-    imageUrl:
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
   },
 ]
 

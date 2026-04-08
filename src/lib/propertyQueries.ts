@@ -1,4 +1,5 @@
 import { queryOptions } from '@tanstack/react-query'
+import { EXPERIENCES } from '../data/experiences'
 import {
   PROPERTIES,
   getPropertyById,
@@ -9,9 +10,8 @@ function delay(ms: number) {
   return new Promise((r) => setTimeout(r, ms))
 }
 
-/** Simulates an agency API; replace with fetch('/api/properties/:id') */
 export async function fetchPropertyById(id: string): Promise<Property | null> {
-  await delay(280)
+  await delay(200)
   const found = getPropertyById(id)
   return found ?? null
 }
@@ -27,8 +27,18 @@ export function propertyListQueryOptions() {
   return queryOptions({
     queryKey: ['properties'],
     queryFn: async () => {
-      await delay(200)
+      await delay(160)
       return PROPERTIES
+    },
+  })
+}
+
+export function experienceListQueryOptions() {
+  return queryOptions({
+    queryKey: ['experiences'],
+    queryFn: async () => {
+      await delay(120)
+      return EXPERIENCES
     },
   })
 }

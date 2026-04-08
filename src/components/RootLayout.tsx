@@ -13,14 +13,21 @@ export function RootLayout() {
   return (
     <div className="app-shell">
       <header className="site-header">
-        <Link to="/" className="brand">
-          Poinciana
+        <Link to="/" className="brand" aria-label="Luxora home">
+          <span className="brand-mark" aria-hidden="true" />
+          Luxora
         </Link>
         <nav className="site-nav" aria-label="Main">
           <Link to="/" className="nav-link">
-            Listings
+            Properties
+          </Link>
+          <Link to="/" hash="experiences" className="nav-link">
+            Experiences
           </Link>
         </nav>
+        <button type="button" className="btn-login">
+          Login
+        </button>
       </header>
       <main className="site-main">
         <Suspense fallback={<RouteFallback />}>
@@ -28,7 +35,7 @@ export function RootLayout() {
         </Suspense>
       </main>
       <footer className="site-footer">
-        <span>Booking agency demo — TanStack Router &amp; Query</span>
+        <span>© {new Date().getFullYear()} Luxora. All rights reserved.</span>
       </footer>
     </div>
   )

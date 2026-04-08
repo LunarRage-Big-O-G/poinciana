@@ -3,10 +3,10 @@ import { Link } from '@tanstack/react-router'
 export function NotFoundPage() {
   return (
     <div className="page-not-found">
-      <h1>Listing not found</h1>
-      <p>That property ID does not exist in our catalog.</p>
-      <Link to="/" className="btn-primary">
-        Back to listings
+      <h1>Not found</h1>
+      <p>This property is not in the catalog.</p>
+      <Link to="/" hash="collection" className="btn-primary">
+        View properties
       </Link>
     </div>
   )
