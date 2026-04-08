@@ -1,4 +1,4 @@
-# Luxora
+# Poinciana
 
 Front-end for a **real estate and vacation booking** client: browse residences, preview optional **trip experiences** (excursions, activities, add-on services), and see a packaged **estimated total** before checkout.
 
