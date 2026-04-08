@@ -1,6 +1,6 @@
 # Poinciana
 
-Booking-agency style listings UI: **TanStack Router**, **TanStack Query**, and **Spline** (`@splinetool/react-spline`) for interactive 3D property views.
+Booking-agency style listings UI using **TanStack Router** and **TanStack Query**.
 
 ## Run locally
 
@@ -9,6 +9,6 @@ npm install
 npm run dev
 ```
 
-## Spline scenes
+## Data
 
-Each listing in `src/data/properties.ts` has a `splineSceneUrl`. In Spline: **Export → Code → React**, then paste your hosted `.splinecode` URL per property.
+Listings live in `src/data/properties.ts` (`imageUrl`, copy, rates). Swap in your API in `src/lib/propertyQueries.ts`.

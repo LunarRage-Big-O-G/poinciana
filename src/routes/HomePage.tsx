@@ -10,8 +10,8 @@ export function HomePage() {
       <section className="hero-block">
         <h1>Find your next stay</h1>
         <p className="lede">
-          Browse homes and open any listing for an interactive 3D walkthrough
-          powered by Spline — orbit, zoom, and explore before you book.
+          Browse curated homes, open a listing for photos and details, then book
+          when you connect your backend.
         </p>
       </section>
 
@@ -19,6 +19,16 @@ export function HomePage() {
         {properties.map((p) => (
           <li key={p.id}>
             <article className="property-card">
+              <div className="property-card-thumb">
+                <img
+                  src={p.imageUrl}
+                  alt={p.name}
+                  width={400}
+                  height={225}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div className="property-card-body">
                 <h2>{p.name}</h2>
                 <p className="property-tagline">{p.tagline}</p>
@@ -33,7 +43,7 @@ export function HomePage() {
                   params={{ propertyId: p.id }}
                   className="btn-primary"
                 >
-                  View &amp; explore in 3D
+                  View listing
                 </Link>
               </div>
             </article>

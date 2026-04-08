@@ -28,7 +28,7 @@ export function RootLayout() {
         </Suspense>
       </main>
       <footer className="site-footer">
-        <span>Booking agency demo — TanStack Router &amp; Query + Spline</span>
+        <span>Booking agency demo — TanStack Router &amp; Query</span>
       </footer>
     </div>
   )

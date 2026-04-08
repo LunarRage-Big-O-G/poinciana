@@ -1,6 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { Link, notFound, useParams } from '@tanstack/react-router'
-import { PropertySplineViewer } from '../components/PropertySplineViewer'
 import { propertyByIdQueryOptions } from '../lib/propertyQueries'
 
 export function PropertyPage() {
@@ -25,16 +24,28 @@ export function PropertyPage() {
         </p>
       </div>
 
-      <PropertySplineViewer
-        sceneUrl={property.splineSceneUrl}
-        title={property.name}
-      />
+      <figure className="property-media">
+        <img
+          src={property.imageUrl}
+          alt={property.name}
+          className="property-image"
+          width={1200}
+          height={675}
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+
+      <section className="property-about">
+        <h2>About this stay</h2>
+        <p>{property.description}</p>
+      </section>
 
       <section className="booking-cta">
         <h2>Ready to book?</h2>
         <p>
-          This demo focuses on the 3D experience. Wire your checkout or inquiry
-          form here, or connect to your booking engine API.
+          Connect your availability API or embed your checkout flow here when you
+          are ready to go live.
         </p>
         <button type="button" className="btn-primary" disabled>
           Request dates (connect API)
