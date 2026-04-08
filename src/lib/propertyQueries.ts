@@ -1,5 +1,5 @@
 import { queryOptions } from '@tanstack/react-query'
-import { EXPERIENCES } from '../data/experiences'
+import { EXPERIENCES, getExperienceById } from '../data/experiences'
 import {
   PROPERTIES,
   getPropertyById,
@@ -40,5 +40,17 @@ export function experienceListQueryOptions() {
       await delay(120)
       return EXPERIENCES
     },
+  })
+}
+
+export async function fetchExperienceById(id: string) {
+  await delay(100)
+  return getExperienceById(id) ?? null
+}
+
+export function experienceByIdQueryOptions(id: string) {
+  return queryOptions({
+    queryKey: ['experience', id],
+    queryFn: () => fetchExperienceById(id),
   })
 }
