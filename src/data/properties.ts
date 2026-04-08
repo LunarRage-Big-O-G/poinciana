@@ -2,51 +2,53 @@ export type Property = {
   id: string
   name: string
   tagline: string
+  description: string
   location: string
   nightlyRate: number
   bedrooms: number
   baths: number
-  /** Spline "React" export URL (ends in .splinecode) — replace with your hosted scenes */
-  splineSceneUrl: string
+  imageUrl: string
 }
 
-/**
- * Demo scenes from Spline public examples. Swap each listing's `splineSceneUrl`
- * in the Spline editor: Export → Code → React → copy the prod URL.
- */
 export const PROPERTIES: Property[] = [
   {
-    id: 'loft-aurora',
-    name: 'Aurora Loft',
-    tagline: 'Open plan living with skyline views',
-    location: 'Austin, TX',
-    nightlyRate: 189,
+    id: 'villa-cove',
+    name: 'Cove House',
+    tagline: 'Cliffside pool and sunset views',
+    description:
+      'Three suites, outdoor kitchen, and direct water access. Housekeeping every other day.',
+    location: 'Ocho Rios',
+    nightlyRate: 420,
+    bedrooms: 3,
+    baths: 3,
+    imageUrl:
+      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
+  },
+  {
+    id: 'estate-garden',
+    name: 'Garden Estate',
+    tagline: 'Wide lawns and a quiet guest cottage',
+    description:
+      'Main house plus cottage, ideal for two families. Full kitchen and shaded terraces.',
+    location: 'Montego Bay',
+    nightlyRate: 510,
+    bedrooms: 5,
+    baths: 4,
+    imageUrl:
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+  },
+  {
+    id: 'bungalow-lagoon',
+    name: 'Lagoon Bungalow',
+    tagline: 'Dock and glass walls over the water',
+    description:
+      'One-level layout with kayaks included. Perfect for a longer stay with remote work.',
+    location: 'Negril',
+    nightlyRate: 295,
     bedrooms: 2,
     baths: 2,
-    splineSceneUrl:
-      'https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode',
-  },
-  {
-    id: 'cabin-ridge',
-    name: 'Ridge Cabin',
-    tagline: 'Quiet wood retreat, floor-to-ceiling glass',
-    location: 'Asheville, NC',
-    nightlyRate: 245,
-    bedrooms: 3,
-    baths: 2,
-    splineSceneUrl:
-      'https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode',
-  },
-  {
-    id: 'studio-harbor',
-    name: 'Harbor Studio',
-    tagline: 'Compact waterfront stay',
-    location: 'Portland, ME',
-    nightlyRate: 132,
-    bedrooms: 1,
-    baths: 1,
-    splineSceneUrl:
-      'https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode',
+    imageUrl:
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
   },
 ]
 

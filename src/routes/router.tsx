@@ -6,7 +6,10 @@ import {
 } from '@tanstack/react-router'
 import type { QueryClient } from '@tanstack/react-query'
 import { RootLayout } from '../components/RootLayout'
-import { propertyByIdQueryOptions } from '../lib/propertyQueries'
+import {
+  experienceListQueryOptions,
+  propertyByIdQueryOptions,
+} from '../lib/propertyQueries'
 import { HomePage } from './HomePage'
 import { NotFoundPage } from './NotFoundPage'
 import { PropertyPage } from './PropertyPage'
@@ -34,6 +37,7 @@ const propertyRoute = createRoute({
       propertyByIdQueryOptions(params.propertyId),
     )
     if (!property) throw notFound()
+    await context.queryClient.ensureQueryData(experienceListQueryOptions())
   },
   component: PropertyPage,
 })
